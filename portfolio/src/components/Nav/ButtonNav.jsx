@@ -1,4 +1,3 @@
-
 import {FcAbout, FcContacts, FcHome} from 'react-icons/fc'
 
 function ButtonNav() {
@@ -7,20 +6,20 @@ function ButtonNav() {
 
       <a href="#">
       <FcHome 
-          className='w-[20px] h-[60px] m-auto'
+          className='w-[25px] h-[25px]'
         />
       </a>
 
       <a href="#">
           <FcAbout 
-            className='w-[20px] h-[60px] m-auto'
+            className='w-[25px] h-[25px]'
           />
 
         </a>
 
         <a href="#">
           <FcContacts 
-            className='w-[20px] h-[60px] m-auto'
+            className='w-[25px] h-[25px] bg-red-400'
           />
         </a> 
 
