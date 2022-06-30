@@ -1,18 +1,37 @@
 import React from 'react'
-import ButtonNav from './ButtonNav'
+import { useState, useEffect } from 'react'
+import { BotonMenu } from '../../components/Nav/BotonMenu'
+
+import logo from '../../assets/logo.svg'
 
 
 function NavBar() {
+
+  const [isOpen, setIsOpen] = useState(false)
+  useState(() => {
+    
+  },[isOpen])
+
+
   return (
-    <nav className='flex justify-center '>
-      <div className="absolute bottom-3 sm:w-[260px] w-[200px] h-[60px] bg-[#6c72cb] shadow-xl border rounded-full">
+    <nav className=' flex justify-between items-center py-4 px-6'>
 
-      <div className="flex justify-around items-center h-full">
+      <div className="">
 
-      <ButtonNav />
+        <img 
+          className='w-12'
+          src={logo} 
+          alt="Logo"
+         />
+      </div>
+
+      <div className="sm:hidden text-xl flex justify-around items-center gap-20 h-full">
+        <a href="#" className="text-white">Home</a>
+        <a href="#" className="text-white">About</a>
+        <a href="#" className="text-white">Contact</a>
 
       </div>
-      </div>
+    <BotonMenu />
     </nav>
   )
 }
