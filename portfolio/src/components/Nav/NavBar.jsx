@@ -6,19 +6,21 @@ import {FcMenu} from 'react-icons/fc'
 
 function NavBar() {
 
+  const showMenu = () => {
+    return (
+      <div className='bg-red-300 w-[200px] h-[300px]'>
+      <a href="">Section 1</a>
+      <a href="">Section 2</a>
+      <a href="">Section 3</a>
+    </div>
+    )
+  }
+
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
     console.log('holaa');
-    return (
-      () => {
-      <div className='bg-red-300 w-[200px] h-[300px]'>
-        <a href="">Section 1</a>
-        <a href="">Section 2</a>
-        <a href="">Section 3</a>
-      </div>
-      }
-    )
+    setIsOpen(true)
   },[isOpen])
 
   return (
@@ -41,7 +43,7 @@ function NavBar() {
       </div>
 
       <div className="hidden absolute bottom-3 right-3 p-3 text-3xl rounded-full bg-white sm:block cursor-pointer">
-        <FcMenu onClick={() => setIsOpen({isOpen: !isOpen})}/>
+        <FcMenu onClick={() => {setIsOpen(showMenu(isOpen))}}/>
       </div>
     </nav>
   )
