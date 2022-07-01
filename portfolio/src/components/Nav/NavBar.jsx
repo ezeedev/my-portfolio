@@ -1,17 +1,25 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { BotonMenu } from '../../components/Nav/BotonMenu'
 
 import logo from '../../assets/logo.svg'
-
+import {FcMenu} from 'react-icons/fc'
 
 function NavBar() {
 
   const [isOpen, setIsOpen] = useState(false)
-  useState(() => {
-    
-  },[isOpen])
 
+  useEffect(() => {
+    console.log('holaa');
+    return (
+      () => {
+      <div className='bg-red-300 w-[200px] h-[300px]'>
+        <a href="">Section 1</a>
+        <a href="">Section 2</a>
+        <a href="">Section 3</a>
+      </div>
+      }
+    )
+  },[isOpen])
 
   return (
     <nav className=' flex justify-between items-center py-4 px-6'>
@@ -31,7 +39,10 @@ function NavBar() {
         <a href="#" className="text-white">Contact</a>
 
       </div>
-    <BotonMenu />
+
+      <div className="hidden absolute bottom-3 right-3 p-3 text-3xl rounded-full bg-white sm:block cursor-pointer">
+        <FcMenu onClick={() => setIsOpen({isOpen: !isOpen})}/>
+      </div>
     </nav>
   )
 }
